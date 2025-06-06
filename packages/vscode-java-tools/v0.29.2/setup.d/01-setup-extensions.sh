@@ -6,6 +6,7 @@ set -eo pipefail
 PACKAGE_DIR=$(cd "$(dirname $BASH_SOURCE)/.."; pwd)
 
 # Install extensions
+echo "Starting time for installing vscode-java extensions" $(date)
 
 ## If $PLATFORM_ARCH is set to "arm64", use the arm64 versions of the extensions
 if [[ "$PLATFORM_ARCH" == "arm64" ]]; then
@@ -25,3 +26,5 @@ code-server --install-extension $PACKAGE_DIR/extensions/vscjava.vscode-java-pack
 cp -r $PACKAGE_DIR/settings.json ~/.local/share/code-server/User/settings.json
 
 unset PACKAGE_DIR
+
+echo "End time for installing vscode-java extensions" $(date)
