@@ -14,6 +14,7 @@ located under the `package` directory
 - [crane](packages/crane/)
 - [toolhive from Stacklok](packages/toolhive/)
 - [github](packages/github/)
+- [vcluster](packages/vcluster/)
 - [vscode-java-tools](packages/vscode-java-tools/)
 - [vscode-java-tools-oci-overlay](packages/vscode-java-tools-oci-overlay/)
 - [vscode-roo-code](packages/vscode-roo-code/)

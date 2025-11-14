@@ -1,0 +1,40 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: "sample-vcluster-extension-workshop"
+spec:
+  title: "vCluster CLI Extensions sample workshop"
+  description: "Workshop to sample the vCluster CLI extension for Educates"
+  publish:
+    image: "$(image_repository)/sample-vcluster-extension-workshop-files:$(workshop_version)"
+  workshop:
+    files:
+    - image:
+        url: "$(image_repository)/sample-vcluster-extension-workshop-files:$(workshop_version)"
+      includePaths:
+      - /workshop/**
+      - /exercises/**
+      - /README.md
+    packages:
+      - name: vcluster
+        files:
+          - path: .
+            image:
+              url: $(image_repository)/vcluster:v0.30.0
+  session:
+    namespaces:
+      budget: large
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      editor:
+        enabled: true
+      console:
+        enabled: false
+      docker:
+        enabled: false
+      registry:
+        enabled: false
+      vcluster:
+        enabled: false
