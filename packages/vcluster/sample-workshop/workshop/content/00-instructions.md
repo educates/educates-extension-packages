@@ -19,7 +19,7 @@ spec:
         files:
           - path: .
             image:
-              url: $(image_repository)/vcluster:v0.30.0
+              url: $(image_repository)/vcluster:v0.30.2
 ```
 
 Once the vCluster CLI extension pack is configured in your workshop manifest,
