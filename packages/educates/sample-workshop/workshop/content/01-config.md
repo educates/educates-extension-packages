@@ -16,5 +16,5 @@ spec:
         files:
           - path: .
             image:
-              url: $(image_repository)/educates:v3.3.2
+              url: $(image_repository)/educates:v3.5.1
 ```
