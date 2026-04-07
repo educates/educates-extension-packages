@@ -1,0 +1,17 @@
+apiVersion: vendir.k14s.io/v1alpha1
+kind: Config
+
+minimumRequiredVersion: 0.26.0
+
+directories:
+  - path: bin
+    contents:
+      - path: .
+        githubRelease:
+          # https://github.com/chainloop-dev/chainloop/releases/download/v1.89.8chainloop-linux-amd64
+          slug: chainloop-dev/chainloop
+          tag: v1.89.8
+          disableAutoChecksumValidation: true
+        includePaths:
+          - chainloop-linux-amd64
+          - chainloop-linux-arm64

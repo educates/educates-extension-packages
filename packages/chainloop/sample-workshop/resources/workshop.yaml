@@ -1,0 +1,40 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: "sample-chainloop-extension-workshop"
+spec:
+  title: "chainloop CLI Extensions sample workshop"
+  description: "Workshop to sample the chainloop CLI extension for Educates"
+  publish:
+    image: "$(image_repository)/sample-chainloop-extension-workshop-files:$(workshop_version)"
+  workshop:
+    files:
+    - image:
+        url: "$(image_repository)/sample-chainloop-extension-workshop-files:$(workshop_version)"
+      includePaths:
+      - /workshop/**
+      - /exercises/**
+      - /README.md
+    packages:
+      - name: chainloop
+        files:
+          - path: .
+            image:
+              url: $(image_repository)/chainloop:v1.89.8
+  session:
+    namespaces:
+      budget: medium
+    applications:
+      terminal:
+        enabled: true
+        layout: split
+      editor:
+        enabled: true
+      console:
+        enabled: false
+      docker:
+        enabled: false
+      registry:
+        enabled: false
+      vcluster:
+        enabled: false
